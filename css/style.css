@@ -229,6 +229,52 @@ hr.rule {
   .fixture-strip .cell + .cell { border-left: none; border-top: 1px solid rgba(255,255,255,0.2); }
 }
 
+/* ---------- Fantasy Sports Section ---------- */
+
+.fantasy-sports-section {
+  background: var(--wash);
+  padding: 2.5rem 0;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.fantasy-sports-section .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.fantasy-sports-section h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fantasy-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fantasy-container iframe {
+  display: block;
+  border-radius: 4px;
+}
+
+@media (max-width: 700px) {
+  .fantasy-sports-section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .fantasy-container iframe {
+    height: 400px !important;
+  }
+}
+
 /* ---------- Match report & news lists ---------- */
 
 .entry {
