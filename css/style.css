@@ -497,3 +497,28 @@ hr.rule {
   font-size: 0.72rem;
   cursor: pointer;
 }
+
+/* ---------- Home page photo banner ---------- */
+
+.hero-banner {
+  position: relative;
+  background: var(--navy) url("../images/background.jpg") center / cover no-repeat;
+  padding: 4.5rem 2.5rem;
+}
+
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 40, 94, 0.72);
+}
+
+.hero-banner > * { position: relative; }
+
+.hero-banner h1 { color: #fff; }
+.hero-banner p { color: #e8eef7; }
+
+.hero-banner .btn { background: #fff; color: var(--navy); border-color: #fff; }
+.hero-banner .btn:hover { background: transparent; color: #fff; }
+.hero-banner .btn.secondary { background: transparent; color: #fff; border-color: #fff; }
+.hero-banner .btn.secondary:hover { background: #fff; color: var(--navy); }
