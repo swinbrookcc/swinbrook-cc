@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photos — Swinbrook Cricket Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="club-mark" href="index.html">
+      <img src="images/logo-white.png" alt="Swinbrook Cricket Club crest" onerror="this.style.display='none'">
+      <span class="club-name">Swinbrook Cricket Club
+        <span class="club-est">Windrush Valley, Oxfordshire</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="match-reports.html">Match Reports</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="scores.html">Scores &amp; Results</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="gallery.html" aria-current="page">Photos</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <h1 class="page-title">Photos</h1>
+  <p class="page-intro">Around the ground and around the season.</p>
+
+  <!-- ============================================================
+       ONE-TIME SETUP: change the line below to your username and
+       repository, exactly as you did in admin.html — copy the
+       value from there. Photos then load automatically from the
+       images/pics folder; no names or lists to maintain.
+       ============================================================ -->
+  <script>
+    const GITHUB_REPO = "YOUR-USERNAME/swinbrook-cc";
+  </script>
+
+  <div class="pics-grid" id="pics-grid">
+    <p class="widget-note">Loading photos…</p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <ul class="footer-links">
+      <li><a href="https://www.instagram.com/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/" rel="noopener">Facebook</a></li>
+      <li><a href="https://swinbrook.play-cricket.com/" rel="noopener">Play-Cricket</a></li>
+      <li><a href="mailto:tombendall14@gmail.com">Contact the club</a></li>
+    </ul>
+    <p class="footer-sponsors">Proudly supported by
+      <a href="https://hawkstone.co" rel="noopener">Hawkstone Brewery</a> and
+      <a href="https://diddlysquatfarmshop.com" rel="noopener">Diddly Squat</a>.</p>
+    <p class="copyright">© Swinbrook Cricket Club. Swinbrook, Oxfordshire. · <a href="admin.html">Admin</a></p>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+(function () {
+  var FOLDER = "images/pics";
+  var grid = document.getElementById("pics-grid");
+
+  fetch("https://api.github.com/repos/" + GITHUB_REPO + "/contents/" + FOLDER)
+    .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+    .then(function (files) {
+      var pics = files.filter(function (f) {
+        return f.type === "file" && /\.(jpe?g|png|gif|webp)$/i.test(f.name);
+      });
+      if (!pics.length) {
+        grid.innerHTML = '<p class="widget-note">No photos yet — check back soon.</p>';
+        return;
+      }
+      grid.innerHTML = pics.map(function (f) {
+        var src = FOLDER + "/" + encodeURIComponent(f.name);
+        return '<a class="pic" href="' + src + '">' +
+               '<img src="' + src + '" loading="lazy" alt="Swinbrook Cricket Club"></a>';
+      }).join("");
+
+      // Lightbox: click a photo to view it large, click again to close.
+      grid.querySelectorAll(".pic").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          var box = document.createElement("div");
+          box.className = "lightbox";
+          box.innerHTML = '<img src="' + a.href + '" alt="Swinbrook Cricket Club">';
+          box.addEventListener("click", function () { box.remove(); });
+          document.body.appendChild(box);
+        });
+      });
+    })
+    .catch(function () {
+      grid.innerHTML = '<p class="widget-note">The photos couldn\'t be loaded just now — ' +
+        'please try again in a few minutes.</p>';
+    });
+})();
+</script>
+</body>
+</html>
