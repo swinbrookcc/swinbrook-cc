@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scores &amp; Results — Swinbrook Cricket Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="club-mark" href="index.html">
+      <img src="images/logo-white.png" alt="Swinbrook Cricket Club crest" onerror="this.style.display='none'">
+      <span class="club-name">Swinbrook Cricket Club
+        <span class="club-est">Windrush Valley, Oxfordshire</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="match-reports.html">Match Reports</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="scores.html" aria-current="page">Scores &amp; Results</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <h1 class="page-title">Scores &amp; Results</h1>
+  <p class="page-intro">Season results below, with live scoring on match days.
+     Full scorecards for every fixture are on our
+     <a href="https://play-cricket.com/website/websites/live?club_id=6202" rel="noopener">Play-Cricket page</a>.</p>
+
+  <p class="eyebrow">Live Scoring</p>
+  <div class="widget-frame">
+    <!-- ============================================================
+         PLAY-CRICKET LIVE SCORER WIDGET — do not edit this block.
+         It shows a scorecard only while a match is being live-scored;
+         on non-match days it will appear empty, which is normal.
+         ============================================================ -->
+    <a style="display:none;" class="lsw" href="https://www.play-cricket.com/embed_widget/live_scorer_widgets?club_id=6202&days=0" id="lsw_link_1526534855798"></a>
+    <div class="lsw-col-12 lsw_tile" id="lsw_container_1526534855798"></div>
+    <script type="text/javascript">function loadCSSIfNotAlreadyLoadedForSomeReason() {var ss = document.styleSheets;for (var i = 0, max = ss.length; i < max; i++){if (ss[i].href == "https://www.play-cricket.com/live_scorer.css")return;}var link = document.createElement("link");link.rel = "stylesheet";link.href = "https://www.play-cricket.com/live_scorer.css";document.getElementsByTagName("head")[0].appendChild(link);}loadCSSIfNotAlreadyLoadedForSomeReason();!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://www.play-cricket.com/live_scorer.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","lsw-wjs");</script>
+  </div>
+  <p class="widget-note">The live scorecard appears here while a match is being
+     scored. Outside match days this space stays quiet — the season's results
+     are always in the table below.</p>
+
+  <p class="eyebrow">Season 2026</p>
+
+  <!-- ============================================================
+       HOW TO ADD A RESULT
+       Copy one <tr> block below, paste it directly under <tbody>
+       (newest at the top), and edit the details.
+       The coloured circle: class="badge w" for a win,
+       "badge l" for a loss, "badge d" for a draw/tie,
+       "badge a" for abandoned. The letter inside should match.
+       ============================================================ -->
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Date</th>
+        <th scope="col">Opposition</th>
+        <th scope="col">Venue</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- NEWEST RESULT GOES DIRECTLY BELOW THIS LINE -->
+
+      <!-- EXAMPLE RESULTS — replace with the real season as it unfolds -->
+      <tr>
+        <td><span class="badge w">W</span></td>
+        <td>11 July</td>
+        <td>Leafield</td>
+        <td>Home</td>
+        <td>Swinbrook won by 4 wickets (Leafield 168 all out; Swinbrook 169–6)</td>
+      </tr>
+      <tr>
+        <td><span class="badge a">A</span></td>
+        <td>4 July</td>
+        <td>Chadlington</td>
+        <td>Away</td>
+        <td>Abandoned — rain (Swinbrook 84–2 off 22 overs)</td>
+      </tr>
+      <tr>
+        <td><span class="badge l">L</span></td>
+        <td>27 June</td>
+        <td>Minster Lovell</td>
+        <td>Away</td>
+        <td>Minster Lovell won by 23 runs (ML 201–7; Swinbrook 178 all out)</td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <ul class="footer-links">
+      <li><a href="https://www.instagram.com/" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/" rel="noopener">Facebook</a></li>
+      <li><a href="https://swinbrook.play-cricket.com/" rel="noopener">Play-Cricket</a></li>
+      <li><a href="mailto:tombendall14@gmail.com">Contact the club</a></li>
+    </ul>
+    <p class="footer-sponsors">Proudly supported by
+      <a href="https://hawkstone.co" rel="noopener">Hawkstone Brewery</a> and
+      <a href="https://diddlysquatfarmshop.com" rel="noopener">Diddly Squat</a>.</p>
+    <p class="copyright">© Swinbrook Cricket Club. Swinbrook, Oxfordshire. · <a href="admin.html">Admin</a></p>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
