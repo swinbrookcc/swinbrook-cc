@@ -50,22 +50,30 @@ const FIXTURES = [
       { weekday: "long", day: "numeric", month: "long" });
   }
 
-  // Home page: fill in the Next Fixture strip, if it's on this page.
+  // Home page: fill in the Next Fixtures strip, if it's on this page.
   var line = document.getElementById("next-fixture-line");
   var detail = document.getElementById("next-fixture-detail");
   if (line && detail) {
+    function esc(s) {
+      return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    function where(f) {
+      return f.venue.toLowerCase() === "home" ? "at home to" : "away at";
+    }
     if (upcoming.length) {
-      var n = upcoming[0];
-      var sameDay = upcoming.filter(function (f) { return f.date === n.date; });
+      var next = upcoming.slice(0, 3);
+      var n = next[0];
       line.textContent = "Swinbrook " + n.team + " vs " + n.opposition;
-      var text = nice(n.date) + (n.time ? ", " + n.time : "") +
-        (n.venue.toLowerCase() === "home" ? " — home, Swinbrook" : " — away");
-      for (var i = 1; i < sameDay.length; i++) {
-        var m = sameDay[i];
-        text += " · also " + m.team + " " +
-          (m.venue.toLowerCase() === "home" ? "at home to " : "away at ") + m.opposition;
+      var lines = [
+        esc(nice(n.date) + (n.time ? ", " + n.time : "") +
+          (n.venue.toLowerCase() === "home" ? " — home, Swinbrook" : " — away"))
+      ];
+      for (var i = 1; i < next.length; i++) {
+        var m = next[i];
+        lines.push(esc("Then: " + nice(m.date) + " — " + m.team + " " +
+          where(m) + " " + m.opposition + (m.time ? ", " + m.time : "")));
       }
-      detail.textContent = text;
+      detail.innerHTML = lines.join("<br>");
     } else {
       line.textContent = "No fixture currently scheduled";
       detail.textContent = "The full list is on our Play-Cricket page.";
