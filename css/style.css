@@ -102,7 +102,7 @@ a:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.6rem;
+  gap: 1.1rem;
 }
 
 .site-nav a {
@@ -113,6 +113,7 @@ a:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
   text-transform: uppercase;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .site-nav a:hover { color: var(--sky); }
