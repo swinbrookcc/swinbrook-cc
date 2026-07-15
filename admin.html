@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin — Swinbrook Cricket Club</title>
+  <title>Captains' Admin — Swinbrook Cricket Club</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
     <a class="club-mark" href="index.html">
       <img src="images/logo-white.png" alt="Swinbrook Cricket Club crest" onerror="this.style.display='none'">
       <span class="club-name">Swinbrook Cricket Club
-        <span class="club-est">Club Admin</span>
+        <span class="club-est">Captains' Admin</span>
       </span>
     </a>
   </div>
@@ -27,20 +27,10 @@
 
 <main>
 
-  <!-- ============================================================
-       ONE-TIME SETUP: after creating your GitHub repository, edit
-       the line below so it reads "your-username/your-repo-name",
-       e.g. "swinbrookcc/swinbrook-cc". The edit buttons won't work
-       until you do. (Guide 2 explains this step.)
-       ============================================================ -->
-  <script>
-    const GITHUB_REPO = "YOUR-USERNAME/swinbrook-cc";
-  </script>
-
   <!-- ---------- Login ---------- -->
   <section id="login-panel" class="admin-login">
-    <h1 class="page-title">Club Admin</h1>
-    <p class="page-intro">Sign in to manage the website.</p>
+    <h1 class="page-title">Captains' Admin</h1>
+    <p class="page-intro">Sign in to see the weekly checklist.</p>
     <div class="admin-form">
       <label for="admin-user">Username</label>
       <input type="text" id="admin-user" autocomplete="username">
@@ -51,106 +41,87 @@
     </div>
   </section>
 
-  <!-- ---------- Dashboard (hidden until signed in) ---------- -->
+  <!-- ---------- Checklist (hidden until signed in) ---------- -->
   <section id="dashboard" hidden>
 
-    <h1 class="page-title">Club Admin</h1>
-    <p class="page-intro">Each button opens the right file in GitHub's editor,
-       signed in with your GitHub account. Make the change, press
-       <strong>Commit changes</strong>, and it's live within a minute or two.
-       The templates to copy are at the bottom of this page.</p>
+    <h1 class="page-title">Captains' Weekly Checklist</h1>
+    <p class="page-intro">Everything a captain needs to do around a match,
+       in order. League links need the <strong>club login</strong> for the
+       Cherwell League site.</p>
 
-    <p class="eyebrow">Weekly Jobs</p>
+    <p class="eyebrow">Before the Game</p>
+    <ol class="task-list">
+      <li>
+        <strong>Pick a team.</strong>
+      </li>
+      <li>
+        <strong>Check registrations.</strong>
+        <a href="https://cherwellcricketleague.com/clubdetails.php" rel="noopener">Cherwell League — club details</a>
+        <span class="task-note">Log in and go to <em>Registrations</em> on the
+        top bar. You'll need the club login.</span>
+      </li>
+      <li>
+        <strong>Send the teams out.</strong>
+      </li>
+      <li>
+        <strong>Make sure the iPad is charged.</strong>
+      </li>
+    </ol>
+
+    <p class="eyebrow">After the Game</p>
+    <ol class="task-list">
+      <li>
+        <strong>Submit the result</strong> — home team only.
+        <a href="https://cherwellcricketleague.com/submitresultMain21.php" rel="noopener">Submit result</a>
+      </li>
+      <li>
+        <strong>Submit the scorecard</strong> — home team only.
+        <a href="https://cherwellcricketleague.com/submitresultPC24.php" rel="noopener">Submit via Play-Cricket score</a>
+        <span class="task-note">Make sure the scorecard is edited correctly
+        and every player is included. To edit it first:
+        <a href="https://cherwellcricketleague.com/clubdetails.php" rel="noopener">log in here</a>
+        and go to <em>Matches → Edit Scorecard</em>.</span>
+        <span class="task-note task-warning">If the game was NOT scored on
+        Play-Cricket, it needs to be next time. For this week,
+        <a href="https://cherwellcricketleague.com/submitscorecardMain21.php" rel="noopener">input the scorecard manually here</a>.</span>
+      </li>
+      <li>
+        <strong>Write the captain's report.</strong>
+        <a href="https://cherwellcricketleague.com/submitCaptainsMain24.php?matchid=0" rel="noopener">Captain's report form</a>
+      </li>
+      <li>
+        <strong>Make sure the umpire reports.</strong>
+        <span class="task-note">This is the captain's responsibility. Send the
+        umpire this link:
+        <a href="https://cherwellcricketleague.com/submitumpiresFeedback24.php?matchid=0" rel="noopener">umpire feedback form</a>.</span>
+      </li>
+      <li>
+        <strong>Text a short match report to Tom Bendall</strong>, who will
+        upload it to the website.
+      </li>
+    </ol>
+
+    <p class="widget-note">Spotted a mistake in a scorecard?
+      <a href="https://cherwellcricketleague.com/submitresultErrorsNew2.php" rel="noopener">Submit a problem here</a>.</p>
+
+    <p class="eyebrow">News &amp; Socials</p>
+    <p>Please send any news, events or social updates to Tom Bendall for the
+       website — or add them yourself (sign up for a free Padlet account and
+       request access):</p>
     <div class="admin-grid">
-      <a class="admin-card" data-edit="match-reports.html">
-        <strong>Add a match report</strong>
-        <span>Opens match-reports.html — paste the report template below the
-        "newest report" marker.</span>
+      <a class="admin-card" href="https://padlet.com/tombendall14/match-reports-zwib8o3412sfn7a1" rel="noopener">
+        <strong>Match reports board</strong>
+        <span>Post your match report here.</span>
       </a>
-      <a class="admin-card" data-edit="scores.html">
-        <strong>Add a result to the table</strong>
-        <span>Opens scores.html — paste a result row under the "newest result"
-        marker.</span>
-      </a>
-      <a class="admin-card" data-edit="index.html">
-        <strong>Update next fixture / latest result</strong>
-        <span>Opens the home page — edit the fixture strip near the middle of
-        the file.</span>
+      <a class="admin-card" href="https://padlet.com/tombendall14/news-and-events-ow9t1we0bfqhssh3" rel="noopener">
+        <strong>News &amp; events board</strong>
+        <span>Post club news, socials and events here.</span>
       </a>
     </div>
 
-    <p class="eyebrow">Everything Else</p>
-    <div class="admin-grid">
-      <a class="admin-card" data-edit="news.html">
-        <strong>Add a news item</strong>
-        <span>Announcements, events, nets nights.</span>
-      </a>
-      <a class="admin-card" data-edit="statistics.html">
-        <strong>Update the honours boards</strong>
-        <span>Leading run scorers and wicket takers.</span>
-      </a>
-      <a class="admin-card" data-edit="sponsors.html">
-        <strong>Edit sponsors</strong>
-        <span>Sponsor text, links and tiers.</span>
-      </a>
-      <a class="admin-card" data-upload="images">
-        <strong>Upload photos &amp; logos</strong>
-        <span>Drag pictures into the images folder.</span>
-      </a>
-      <a class="admin-card" data-history="">
-        <strong>See recent changes</strong>
-        <span>Every past version of the site, in case you need to undo
-        something.</span>
-      </a>
-      <a class="admin-card" href="https://play-cricket.com/website/websites/live?club_id=6202" rel="noopener">
-        <strong>Play-Cricket admin</strong>
-        <span>Scorecards, averages and widget codes.</span>
-      </a>
-    </div>
-
-    <p class="eyebrow">Templates</p>
-    <p class="widget-note">Copy a template, open the matching page with the
-       buttons above, and paste it directly below the "NEWEST ... GOES
-       DIRECTLY BELOW THIS LINE" marker in the file. Then edit the wording.</p>
-
-    <h2 class="admin-h2">Match report</h2>
-    <div class="template-block">
-      <button class="btn secondary copy-btn" type="button">Copy</button>
-<pre><code>&lt;article class="entry"&gt;
-  &lt;p class="meta"&gt;Saturday 1 January 2026 · Home vs Opposition Name&lt;/p&gt;
-  &lt;h2&gt;Report title goes here&lt;/h2&gt;
-  &lt;p class="result-line"&gt;&lt;span class="won"&gt;Swinbrook won by X runs&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;First paragraph of the report goes here.&lt;/p&gt;
-  &lt;p&gt;Second paragraph, if you want one.&lt;/p&gt;
-&lt;/article&gt;</code></pre>
-    </div>
-    <p class="widget-note">For a defeat, change <code>class="won"</code> to
-       <code>class="lost"</code>.</p>
-
-    <h2 class="admin-h2">News item</h2>
-    <div class="template-block">
-      <button class="btn secondary copy-btn" type="button">Copy</button>
-<pre><code>&lt;article class="entry"&gt;
-  &lt;p class="meta"&gt;1 January 2026&lt;/p&gt;
-  &lt;h2&gt;News headline goes here&lt;/h2&gt;
-  &lt;p&gt;The announcement text goes here.&lt;/p&gt;
-&lt;/article&gt;</code></pre>
-    </div>
-
-    <h2 class="admin-h2">Result table row</h2>
-    <div class="template-block">
-      <button class="btn secondary copy-btn" type="button">Copy</button>
-<pre><code>&lt;tr&gt;
-  &lt;td&gt;&lt;span class="badge w"&gt;W&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;1 January&lt;/td&gt;
-  &lt;td&gt;Opposition Name&lt;/td&gt;
-  &lt;td&gt;Home&lt;/td&gt;
-  &lt;td&gt;Swinbrook won by X runs (scores here)&lt;/td&gt;
-&lt;/tr&gt;</code></pre>
-    </div>
-    <p class="widget-note">Badge letters: <code>w</code>/W win,
-       <code>l</code>/L loss, <code>d</code>/D draw or tie,
-       <code>a</code>/A abandoned.</p>
+    <p class="eyebrow">Other Admin</p>
+    <p>Everything else on the league side is done through the
+       <a href="https://cherwellcricketleague.com/clubdetails.php" rel="noopener">Cherwell League club login</a>.</p>
 
     <p style="margin: 3rem 0;">
       <button class="btn secondary" id="admin-signout" type="button">Sign out</button>
@@ -168,8 +139,8 @@
 
 <script>
 (function () {
-  // The stored value is a fingerprint (SHA-256 hash) of the correct
-  // username and password, so the details themselves don't appear here.
+  // Scrambled fingerprint of the correct username:password —
+  // the details themselves don't appear in this file.
   var EXPECTED = "f5af1278faedadb527a9369a70125e6849d14ff105f245daa516db0d132a2781";
 
   var login = document.getElementById("login-panel");
@@ -214,31 +185,6 @@
 
   if (sessionStorage.getItem("scc-admin") === "yes") show("dash");
   else show("login");
-
-  // Wire up the dashboard buttons to the right GitHub pages.
-  document.querySelectorAll("[data-edit]").forEach(function (el) {
-    el.href = "https://github.com/" + GITHUB_REPO + "/edit/main/" + el.dataset.edit;
-    el.rel = "noopener";
-  });
-  document.querySelectorAll("[data-upload]").forEach(function (el) {
-    el.href = "https://github.com/" + GITHUB_REPO + "/upload/main/" + el.dataset.upload;
-    el.rel = "noopener";
-  });
-  document.querySelectorAll("[data-history]").forEach(function (el) {
-    el.href = "https://github.com/" + GITHUB_REPO + "/commits/main";
-    el.rel = "noopener";
-  });
-
-  // Copy buttons for the templates.
-  document.querySelectorAll(".copy-btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var code = btn.parentElement.querySelector("code").textContent;
-      navigator.clipboard.writeText(code).then(function () {
-        btn.textContent = "Copied";
-        setTimeout(function () { btn.textContent = "Copy"; }, 1500);
-      });
-    });
-  });
 })();
 </script>
 </body>
